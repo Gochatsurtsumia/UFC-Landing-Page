@@ -1,11 +1,219 @@
-*{
-    box-sizing: 0;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
 }
-.header-discount{
-    background-color: red;
-    text-align: center;
-    color: white;
-    padding: 5px;
+.header-discount {
+  background-color: red;
+  text-align: center;
+  color: white;
+  padding: 5px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #231d1d;
+}
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+}
+#sign-up {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#login {
+  border: 1px solid white;
+  padding: 10px 20px;
+}
+.introduction img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.introduction-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.introduction-text p {
+  font-size: 30px;
+  margin: 10px 0;
+}
+.introduction-text h1 {
+  font-size: 70px;
+}
+.introduction-btn {
+  background-color: #e50914;
+  color: white;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.payment-text {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin: 90px 40px;
+  font-size: 22px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.payment-boxes {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  padding: 20px 100px;
+}
+.payment-box {
+  background-color: white;
+  color: black;
+  padding: 20px 50px;
+  border-radius: 10px;
+  margin: 20px;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.price {
+  font-size: 80px;
+  font-weight: bold;
+  color: #e50914;
+}
+.monthly {
+  font-size: 20px;
+  color: #121111;
+}
+.valute {
+  font-size: 20px;
+  color: #555;
+}
+.description {
+  font-size: 25px;
+  color: #333;
+}
+.payment-box button {
+  background-color: #e50914;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.journey {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.journey-boxes img {
+  width: 400px;
+  height: 400px;
+}
+.journey-text {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.journey-text h1 {
+  font-size: 50px;
+  color: #e50914;
+}
+.journey-boxes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-evenly;
+}
+.journey-box p {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  max-width: 400px;
+}
+.journey-box button {
+  background-color: #e50914;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.journey-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.discount {
+  margin-top: 200px;
+}
+.discount img {
+  width: 100%;
+}
+.event-box {
+  display: flex;
+  margin: 10px 150px;
+  gap: 45px;
+  border: 1px solid black;
+  padding: 40px;
+}
+.event-box-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+.event-box-text h2 {
+  font-size: 50px;
+  color: #e50914;
+}
+.event-box-text p {
+  font-size: 40px;
+  color: black;
+}
+.event-box-text button {
+  background-color: #e50914;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.event-box-buttons{
+    display: flex;
+    gap: 50px;
 }
