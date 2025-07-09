@@ -1,0 +1,11 @@
+*{
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+}
+.header-discount{
+    background-color: red;
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
