@@ -736,6 +736,12 @@ footer {
     padding: 0;
     margin: 0;
   }
+  #muay-thai{
+    width: 90%;
+  }
+  #muay-thai-class {
+    width: 215px;
+  }
 
   .event-box-buttons button {
     width: 100%;
@@ -757,6 +763,7 @@ footer {
 
   .journey-boxes {
     gap: 30px;
+    align-items: center;
   }
 }
 
