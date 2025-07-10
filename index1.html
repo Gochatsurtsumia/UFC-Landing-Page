@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UFC - Ultimate Fighting Championship</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      .header-discount {
+        background-color: red;
+        text-align: center;
+        color: white;
+        padding: 8px 5px;
+        font-size: 14px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #231d1d;
+        position: relative;
+      }
+
+      .navbar-photo img {
+        height: 40px;
+        width: auto;
+      }
+
+      .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .navbar-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-links a:hover {
+        color: #e50914;
+      }
+
+      #sign-up {
+        background-color: #e50914;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      #sign-up:hover {
+        background-color: #cc0812;
+      }
+
+      #login {
+        border: 1px solid white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      #login:hover {
+        background-color: white;
+        color: #231d1d;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .introduction {
+        position: relative;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23333" width="1200" height="800"/><text x="600" y="400" text-anchor="middle" fill="%23666" font-size="48" font-family="Arial">UFC Arena Background</text></svg>');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .introduction-text {
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        z-index: 2;
+      }
+
+      .introduction-text h1 {
+        font-size: clamp(40px, 8vw, 70px);
+        font-weight: 700;
+      }
+
+      .introduction-text p {
+        font-size: clamp(18px, 3vw, 30px);
+        margin: 10px 0;
+      }
+
+      .introduction-btn {
+        background-color: #e50914;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: clamp(18px, 2.5vw, 25px);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .introduction-btn:hover {
+        background-color: #cc0812;
+        transform: translateY(-2px);
+      }
+
+      .payment {
+        padding: 40px 20px;
+      }
+
+      .payment-text {
+        text-align: center;
+        margin: 40px auto;
+        max-width: 800px;
+        font-size: clamp(16px, 2vw, 22px);
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .payment-text h1 {
+        font-size: clamp(28px, 4vw, 40px);
+        margin-bottom: 20px;
+        color: #231d1d;
+      }
+
+      .payment-boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 40px 20px;
+        background-color: black;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .payment-box {
+        background-color: white;
+        color: black;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .payment-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .money {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .price {
+        font-size: clamp(50px, 8vw, 80px);
+        font-weight: 700;
+        color: #e50914;
+      }
+
+      .monthly {
+        font-size: 20px;
+        color: #121111;
+        font-weight: 600;
+      }
+
+      .valute {
+        font-size: 20px;
+        color: #555;
+      }
+
+      .description {
+        font-size: clamp(16px, 2vw, 20px);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .payment-box button {
+        background-color: #e50914;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        width: 100%;
+      }
+
+      .payment-box button:hover {
+        background-color: #cc0812;
+        transform: translateY(-2px);
+      }
+
+      .journey {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 80px 20px;
+      }
+
+      .journey-text {
+        text-align: center;
+        font-size: clamp(18px, 2.5vw, 22px);
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .journey-text h1 {
+        font-size: clamp(32px, 5vw, 50px);
+        color: #e50914;
+        font-weight: 700;
+      }
+
+      .journey-text h2 {
+        font-size: clamp(20px, 3vw, 28px);
+        color: #333;
+        font-weight: 500;
+      }
+
+      .journey-boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .journey-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .journey-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .journey-box img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background-color: #f0f0f0;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><rect fill="%23ddd" width="400" height="250"/><text x="200" y="125" text-anchor="middle" fill="%23999" font-size="16" font-family="Arial">Training Camp</text></svg>');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .journey-box p {
+        font-size: clamp(16px, 2vw, 20px);
+        color: #333;
+        padding: 0 20px;
+        line-height: 1.6;
+      }
+
+      .journey-box button {
+        background-color: #e50914;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 20px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .journey-box button:hover {
+        background-color: #cc0812;
+        transform: translateY(-2px);
+      }
+
+      .discount {
+        margin: 80px 0;
+        padding: 0 20px;
+      }
+
+      .discount img {
+        width: 100%;
+        height: auto;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23e50914" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" fill="white" font-size="48" font-family="Arial">UFC DISCOUNT OFFER</text></svg>');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .events {
+        padding: 80px 20px;
+      }
+
+      .events-text {
+        text-align: center;
+        font-size: clamp(28px, 4vw, 35px);
+        margin-bottom: 50px;
+        color: #231d1d;
+        font-weight: 700;
+      }
+
+      .event-boxes {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .event-box {
+        display: flex;
+        margin: 30px 0;
+        gap: 20px;
+        border: 2px solid #e50914;
+        padding: 20px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        background-color: white;
+      }
+
+      .event-box:hover {
+        box-shadow: 0 8px 25px rgba(229, 9, 20, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .event-box-img {
+        flex-shrink: 0;
+      }
+
+      .event-box-img img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><rect fill="%23ddd" width="150" height="150"/><text x="75" y="75" text-anchor="middle" fill="%23999" font-size="14" font-family="Arial">UFC</text></svg>');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .event-box-text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: space-between;
+        flex: 1;
+      }
+
+      .event-box-text h2 {
+        font-size: clamp(20px, 3vw, 35px);
+        color: #e50914;
+        font-weight: 700;
+      }
+
+      .event-box-text p {
+        font-size: clamp(14px, 2vw, 20px);
+        color: #333;
+        line-height: 1.5;
+      }
+
+      .event-box-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .event-box-text button {
+        background-color: #e50914;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .event-box-text button:hover {
+        background-color: #cc0812;
+        transform: translateY(-2px);
+      }
+
+      footer {
+        background-color: #231d1d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 40px 20px;
+      }
+
+      #footer-main-logo {
+        height: 60px;
+        width: auto;
+      }
+
+      .logos {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .logos img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .logos img:hover {
+        transform: scale(1.1);
+      }
+
+      #fb {
+        width: 50px;
+        height: 50px;
+      }
+
+      .support {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .support a {
+        color: #e50914;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .support a:hover {
+        color: white;
+      }
+
+      .support-text {
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 800px;
+      }
+
+      /* Mobile Responsive Styles */
+      @media (max-width: 768px) {
+        .navbar-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: #231d1d;
+          flex-direction: column;
+          padding: 20px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-links.active {
+          display: flex;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .header-discount {
+          font-size: 12px;
+          padding: 5px;
+        }
+
+        .introduction {
+          min-height: 60vh;
+        }
+
+        .payment-boxes {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+
+        .journey-boxes {
+          grid-template-columns: 1fr;
+        }
+
+        .event-box {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .event-box-img img {
+          width: 100%;
+          height: 200px;
+        }
+
+        .event-box-buttons {
+          justify-content: center;
+        }
+
+        .support {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .logos {
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .payment-box {
+          padding: 20px;
+        }
+
+        .journey {
+          padding: 40px 10px;
+        }
+
+        .events {
+          padding: 40px 10px;
+        }
+
+        .event-box {
+          padding: 15px;
+        }
+
+        .event-box-buttons {
+          flex-direction: column;
+        }
+
+        .event-box-text button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-discount">
+        <p>Limited Offer 40% Off Annual Plan</p>
+      </div>
+      <nav class="navbar">
+        <div class="navbar-photo">
+          <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'><rect fill='%23e50914' width='100' height='40'/><text x='50' y='25' text-anchor='middle' fill='white' font-size='16' font-family='Arial' font-weight='bold'>UFC</text></svg>" alt="UFC Logo" />
+        </div>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <div class="navbar-links" id="navbar-links">
+          <a href="#">SCHEDULE</a>
+          <a href="#">P4P RANKINGS</a>
+          <a href="#">UFC UPCOMING EVENTS</a>
+          <a href="#">CAMPS</a>
+          <a id="login" href="#">LOGIN</a>
+          <a id="sign-up" href="#">SIGN UP</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="introduction">
+        <div class="introduction-text">
+          <h1>UFC</h1>
+          <p>Ultimate Fighting Championship</p>
+          <button class="introduction-btn">Watch Now</button>
+        </div>
+      </div>
+      <div class="payment">
+        <div class="payment-text">
+          <h1>SELECT A TARIFF PLAN</h1>
+          <p>
+            Your subscription will be renewed automatically within 24 hours
+            after the end of the specified period. If you want to cancel
+            auto-renewal, you must do so 24 hours before the end date of the
+            subscription.
+          </p>
+        </div>
+        <div class="payment-boxes">
+          <div class="payment-box">
+            <div class="money">
+              <p class="monthly">MONTHLY</p>
+              <p class="price">5.50</p>
+              <p class="valute">USD</p>
+            </div>
+            <p class="description">
+              1 month access to all UFC tournaments live in Russian and English
+              and over 20,000 hours of archived fights.
+            </p>
+            <p class="description">
+              - 200+ tournaments per year from the best martial arts leagues
+              from around the world
+            </p>
+            <button>CHOOSE</button>
+          </div>
+          <div class="payment-box">
+            <div class="money">
+              <p class="monthly">ANNUALLY</p>
+              <p class="price">95.55</p>
+              <p class="valute">USD</p>
+            </div>
+            <p class="description">
+              Subscribe for a year - it's much more profitable! Get access to
+              all live broadcasts of UFC tournaments, including numbered ones,
+              as well as:
+            </p>
+            <p class="description">
+              Russian and English commentators Full archive of UFC fights and
+              live broadcasts of leading martial arts leagues Old School
+              Classics Including Legends Fights: Fedor Emelianenko, Khabib
+              Nurmagomedov
+            </p>
+            <button>CHOOSE</button>
+          </div>
+        </div>
+      </div>
+      <section class="journey">
+        <div class="journey-text">
+          <h1>ENJOY YOUR UFC JOURNEY</h1>
+          <h2>AVAILABLE CAMPS THROUGHOUT THE WORLD</h2>
+        </div>
+        <div class="journey-boxes">
+          <div class="journey-box">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect fill='%23f0f0f0' width='400' height='250'/><text x='200' y='125' text-anchor='middle' fill='%23666' font-size='18' font-family='Arial'>Boxing Camp</text></svg>" alt="boxing camp poster" />
+            <p>Good fundamentals of boxing</p>
+            <button>BOOK NOW</button>
+          </div>
+          <div class="journey-box">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect fill='%23f0f0f0' width='400' height='250'/><text x='200' y='125' text-anchor='middle' fill='%23666' font-size='18' font-family='Arial'>Muay Thai Camp</text></svg>" alt="muay thai camp" />
+            <p>The best camp for developing malicious knees</p>
+            <button>BOOK NOW</button>
+          </div>
+          <div class="journey-box">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect fill='%23f0f0f0' width='400' height='250'/><text x='200' y='125' text-anchor='middle' fill='%23666' font-size='18' font-family='Arial'>Jiu-Jitsu Camp</text></svg>" alt="jiu-jitsu camp" />
+            <p>The best bjj coach</p>
+            <button>BOOK NOW</button>
+          </div>
+        </div>
+      </section>
+      <section class="discount">
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><rect fill='%23e50914' width='1200' height='400'/><text x='600' y='200' text-anchor='middle' fill='white' font-size='48' font-family='Arial' font-weight='bold'>SPECIAL UFC DISCOUNT</text><text x='600' y='250' text-anchor='middle' fill='white' font-size='24' font-family='Arial'>Limited Time Offer</text></svg>" alt="UFC Discount Poster" />
+      </section>
+      <section class="events">
+        <div class="events-text">
+          <h1>UPCOMING EVENTS</h1>
+        </div>
+        <div class="event-boxes">
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Lewis vs Teixeira" />
+            </div>
+            <div class="event-box-text">
+              <h2>LEWIS VS TEIXEIRA</h2>
+              <p>
+                Sat, Jul 12 9:00PM/6:00PM ETPT Bridgestone Arena Nashville, TN
+              </p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Holloway vs Poirier" />
+            </div>
+            <div class="event-box-text">
+              <h2>HOLLOWAY VS POIRIER</h2>
+              <p>
+                Sat, Jul 19 10:00PM/7:00PM ETPT Smoothie King Center New
+                Orleans, LA
+              </p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Whittaker vs De Ridder" />
+            </div>
+            <div class="event-box-text">
+              <h2>WHITTAKER VS DE RIDDER</h2>
+              <p>
+                Sat, Jul 2 3:00PM/12:00PM ETPT Etihad Arena Yas Island/Yas West, AZ
+              </p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Albazi vs Taira" />
+            </div>
+            <div class="event-box-text">
+              <h2>ALBAZI VS TAIRA</h2>
+              <p>Sat, Aug 02 06:00PM/3:00PM ETPT UFC APEX Las Vegas, NV</p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Dolidze vs Hernandez" />
+            </div>
+            <div class="event-box-text">
+              <h2>DOLIDZE VS HERNANDEZ</h2>
+              <p>Sat, Aug 09 7:00PM/4:00PM ETPT UFC APEX Las Vegas, NV</p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Du Plessis vs Khamzat" />
+            </div>
+            <div class="event-box-text">
+              <h2>DU PLESSIS VS KHAMZAT</h2>
+              <p>Sat, Aug 16 10:00PM/7:00PM ETPT United Center Chicago, IL</p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text-anchor='middle' fill='%23999' font-size='14' font-family='Arial'>UFC</text></svg>" alt="Imavov vs Borralho" />
+            </div>
+            <div class="event-box-text">
+              <h2>IMAVOV VS BORRALHO</h2>
+              <p>Sat, Sep 06 3:00PM/12:00PM ETPT Accor Arena Paris</p>
+              <div class="event-box-buttons">
+                <button>JOIN NOW</button>
+                <button>LOGIN</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-box">
+            <div class="event-box-img">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><rect fill='%23ddd' width='150' height='150'/><text x='75' y='75' text
