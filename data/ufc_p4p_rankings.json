@@ -1,0 +1,122 @@
+[
+  {
+    "rank": 1,
+    "name": "Ilia Topuria",
+    "stats": "17-0-0",
+    "reach": "69 in",
+    "height": "5 ft 7 in",
+    "photo": "./assets/fighters_photos/TOPURIA_ILIA_L_BELT_10-26.avif"
+  },
+  {
+    "rank": 2,
+    "name": "Islam Makhachev",
+    "stats": "27-1-0",
+    "reach": "70 in",
+    "height": "5 ft 10 in",
+    "photo": "./assets/fighters_photos/MAKHACHEV_ISLAM_L_07-17.png"
+  },
+  {
+    "rank": 3,
+    "name": "Merab Dvalishvili",
+    "stats": "20-4-0",
+    "reach": "68 in",
+    "height": "5 ft 6 in",
+    "photo": "./assets/fighters_photos/DVALISHVILI_MERAB_L_BELT_06-07.png"
+  },
+  {
+    "rank": 4,
+    "name": "Dricus Du Plessis",
+    "stats": "23-2-0",
+    "reach": "76 in",
+    "height": "6 ft 1 in",
+    "photo": "./assets/fighters_photos/DU_PLESSIS_DRICUS_L_BELT_02-08.png"
+  },
+  {
+    "rank": 5,
+    "name": "Alexandre Pantoja",
+    "stats": "30-5-0",
+    "reach": "67 in",
+    "height": "5 ft 5 in",
+    "photo": "./assets/fighters_photos/PANTOJA_ALEXANDRE_L_BELT_06-28.png"
+  },
+  {
+    "rank": 6,
+    "name": "Alexander Volkanovski",
+    "stats": "27-4-0",
+    "reach": "71 in",
+    "height": "5 ft 6 in",
+    "photo": "./assets/fighters_photos/VOLKANOVSKI_ALEXANDER_L_BELT_02-17.png"
+  },
+  {
+    "rank": 7,
+    "name": "Magomed Ankalaev",
+    "stats": "21-1-1",
+    "reach": "75 in",
+    "height": "6 ft 3 in",
+    "photo": "./assets/fighters_photos/ANKALAEV_MAGOMED_L_BELTMOCK.png"
+  },
+  {
+    "rank": 8,
+    "name": "Jack Della Maddalena",
+    "stats": "18-2-0",
+    "reach": "73 in",
+    "height": "5 ft 11 in",
+    "photo": "./assets/fighters_photos/DELLA_MADDALENA_JACK_L_BELTMOCK.png"
+  },
+  {
+    "rank": 9,
+    "name": "Tom Aspinall",
+    "stats": "19-3-0",
+    "reach": "80 in",
+    "height": "6 ft 5 in",
+    "photo": "/assets/fighters_photos/ASPINALL_TOM_BELT_L_07-27.png"
+  },
+  {
+    "rank": 10,
+    "name": "Alex Pereira",
+    "stats": "12-3-0",
+    "reach": "79 in",
+    "height": "6 ft 4 in",
+    "photo": "/assets/fighters_photos/PEREIRA_ALEX_L.png"
+  },
+  {
+    "rank": 11,
+    "name": "Max Holloway",
+    "stats": "25-7-0",
+    "reach": "69 in",
+    "height": "5 ft 11 in",
+    "photo": "/assets/fighters_photos/HOLLOWAY_MAX_L_04-13.png"
+  },
+  {
+    "rank": 12,
+    "name": "Belal Muhammad",
+    "stats": "24-4-0",
+    "reach": "72 in",
+    "height": "5 ft 11 in",
+    "photo": "/assets/fighters_photos/MUHAMMAD_BELAL_L_05-06.png"
+  },
+  {
+    "rank": 13,
+    "name": "Arman Tsarukyan",
+    "stats": "22-3-0",
+    "reach": "73 in",
+    "height": "5 ft 7 in",
+    "photo": "/assets/fighters_photos/TSARUKYAN_ARMAN_L_01-18.png"
+  },
+  {
+    "rank": 14,
+    "name": "Khamzat Chimaev",
+    "stats": "14-0-0",
+    "reach": "75 in",
+    "height": "6 ft 2 in",
+    "photo": "/assets/fighters_photos/CHIMAEV_KHAMZAT_L_10-26.png"
+  },
+  {
+    "rank": 15,
+    "name": "Charles Oliveira",
+    "stats": "35-10-0",
+    "reach": "74 in",
+    "height": "5 ft 10 in",
+    "photo": "/assets/fighters_photos/OLIVEIRA_CHARLES_L_11-16.png"
+  }
+]
