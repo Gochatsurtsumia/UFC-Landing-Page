@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbarLinks = document.getElementById("navbar-links");
+
+  if (menuToggle && navbarLinks) {
+    menuToggle.addEventListener("click", () => {
+      navbarLinks.classList.toggle("show");
+    });
+  }
+
   const container = document.getElementById("rankings-container");
 
   fetch("/data/ufc_p4p_rankings.json")
